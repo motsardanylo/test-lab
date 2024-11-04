@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<head>
+    <title>Проєкт</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: "Roboto Condensed", sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: stretch;
+        }
+
+        .login, .button {
+            background-color: aqua;
+            width: 100%;
+            height: 30px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .login {
+            width: 75px;
+        }
+
+        .link {
+            background-color: black;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .link a {
+            text-decoration: none;
+            color: #fff;
+            margin-right: 15px;
+        }
+
+        .link a:hover {
+            color: aqua;
+        }
+
+        .content {
+            max-width: 350px;
+            width: 100%;
+            border: 2px solid aqua;
+            border-radius: 10px;
+            margin: 20px;
+            text-align: center;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .crypto {
+            width: 200px;
+            border-radius: 10px;
+            margin: 0 auto 20px;
+        }
+
+        header {
+            max-width: 100%;
+        }
+
+        header img.logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        .label {
+            position: absolute;
+            top: -15px;
+            right: -15px; 
+            background-color: red;
+            color: white;
+            padding: 5px 10px;
+            font-size: 12px; 
+            border-radius: 50%;
+            font-weight: bold;
+            height: 30px;
+            width: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .menu-button {
+            background-color: aqua;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+            position: relative;
+        }
+
+        .menu {
+            opacity: 0;
+            flex-direction: row;
+            position: absolute;
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            top: 50px;
+            border-radius: 5px;
+            width: auto;
+            transition: opacity 0.5s ease, visibility 0s 0.5s;
+            display: flex;
+            justify-content: space-between;
+            z-index: 1;
+        }
+
+        .menu a {
+            padding: 10px;
+            text-align: left;
+            color: #333;
+            text-decoration: none;
+            display: block;
+        }
+
+        .menu a:hover {
+            background-color: aqua;
+        }
+
+        .mobile-header {
+            display: none;
+            flex-direction: row;
+            align-items: flex-start;
+            position: fixed;
+        }
+
+        @media (max-width: 768px) {
+            .information {
+                display: none; 
+            }
+
+            .content {
+                flex: 0 0 100%;
+            }
+
+            .desktop-header {
+                display: none;
+            }
+
+            .mobile-header {
+                display: flex;
+            }
+
+            .menu-button:hover + .menu,
+            .menu:hover {
+                opacity: 1;
+                visibility: visible;
+                transition: opacity 0.5s ease;
+            }
+        }
+
+        @media (max-width: 960px) {
+            .content {
+                flex: 0 0 calc(50% - 40px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="link desktop-header">
+        <img src="img/logo.jpg" class="logo" alt="Логотип сайту">
+        <div class="information">
+            <nav>
+                <a href="link.html">На головну</a>
+                <a href="us.html">Про нас</a>
+                <a href="contact.html">Контакти</a>
+            </nav>
+        </div>
+        <form action="#" method="post">
+            <input id="send" type="submit" value="Ввійти" name="login" class="login">
+        </form>
+    </header>
+
+    <header class="mobile-header">
+        <input id="send" type="button" value="Меню" class="menu-button">
+        <div class="menu">
+            <nav>
+                <a href="link.html">На головну</a>
+                <a href="us.html">Про нас</a>
+                <a href="contact.html">Контакти</a>
+                <a href="#" class="login" style="width: auto;">Ввійти</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <div class="label">Top</div>
+            <img src="img/btc.png" alt="Зображення BTC" class="crypto">
+            <article>
+                <header>
+                    <h1>Що таке BTC?</h1>
+                </header>
+                <p>Біткойн або біткоїн (англ. bitcoin; BTC, XBT) — децентралізована електронна платіжна система, 
+                концепт якої був опублікований 2008 року Сатоші Накамото, реалізований ним як відкрите програмне забезпечення 
+                у 2009 році. Згодом подібні системи почали називати криптовалютами.</p>
+                <h4>Перейти до ринку торгівлі BTC</h4>
+                <section>
+                    <form action="#" method="post">
+                        <input id="send" type="submit" value="Перейти" name="order" class="button">
+                    </form>
+                </section>
+            </article>
+        </div>
+
+        <div class="content">
+            <img src="img/sol.jpg" alt="Зображення SOL" class="crypto">
+            <article>
+                <header>
+                    <h1>Що таке SOL?</h1>
+                </header>
+                <p>Solana (SOL) — це блокчейн-платформа, яка призначена для швидкої та масштабованої роботи децентралізованих додатків і криптовалютних проектів. Вона використовує унікальний алгоритм консенсусу під назвою Proof of History, який дозволяє обробляти тисячі транзакцій на секунду, зберігаючи при цьому низькі комісії.</p>
+                <h4>Перейти до ринку торгівлі SOL</h4>
+                <section>
+                    <form action="#" method="post">
+                        <input id="send" type="submit" value="Перейти" name="order" class="button">
+                    </form>
+                </section>
+            </article>
+        </div>
+
+        <div class="content">
+            <img src="img/eth.jpg" alt="Зображення ETH" class="crypto">
+            <article>
+                <header>
+                    <h1>Що таке ETH?</h1>
+                </header>
+                <p>Ethereum (ETH) — це децентралізована платформа, яка дозволяє розробникам створювати та запускати смарт-контракти і децентралізовані додатки (DApps) на своїй блокчейн-мережі. Ethereum також підтримує створення децентралізованих додатків, які працюють у середовищі, що забезпечує безпеку та зручність для користувачів.</p>
+                <h4>Перейти до ринку торгівлі ETH</h4>
+                <section>
+                    <form action="#" method="post">
+                        <input id="send" type="submit" value="Перейти" name="order" class="button">
+                    </form>
+                </section>
+            </article>
+        </div>
+
+        <div class="content">
+            <img src="img/trx.jpg" alt="Зображення TRON" class="crypto">
+            <article>
+                <header>
+                    <h1>Що таке TRX?</h1>
+                </header>
+                <p>TRON (TRX) — це децентралізована платформа, яка спрямована на створення вільної та глобальної системи розваг, що використовує технологію блокчейн. Вона дозволяє користувачам безпосередньо ділитися контентом без посередників, таких як платформи потокового відео чи соціальні мережі.</p>
+                <h4>Перейти до ринку торгівлі TRX</h4>
+                <section>
+                    <form action="#" method="post">
+                        <input id="send" type="submit" value="Перейти" name="order" class="button">
+                    </form>
+                </section>
+            </article>
+        </div>
+    </div>
+</body>
+</html>
